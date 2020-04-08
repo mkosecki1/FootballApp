@@ -2,11 +2,13 @@ package com.footballapp
 
 import com.footballapp.net.RestApi
 import com.footballapp.repository.Repository
+import com.footballapp.ui.scorers.ScorersViewModel
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -14,6 +16,10 @@ import java.util.concurrent.TimeUnit
 
 const val HEADER_NAME = "X-Auth-Token"
 const val HEADER_VALUE = "97a5f465440a4bd4bbe735a791adbc78"
+
+val viewModelModule = module {
+    viewModel { ScorersViewModel(get()) }
+}
 
 val repositoryModule = module {
     single {

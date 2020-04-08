@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="recycler_margin_medium">12dp</dimen>
+    <dimen name="recycler_margin_big">16dp</dimen>
+    <dimen name="margin_big_28_dp">28dp</dimen>
+    <dimen name="margin_medium_12_dp">12dp</dimen>
+    <dimen name="card_layout_height">80dp</dimen>
+    <dimen name="margin_small_8_dp">8dp</dimen>
+    <dimen name="text_size_17_sp">17sp</dimen>
+</resources>
