@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorPrimary"
+    android:focusableInTouchMode="true"
+    tools:context=".ui.login.LoginFragment">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTopLoginFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineStartLoginFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/margin_large_32dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineEndLoginFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/margin_large_32dp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textTitleLoginFragment"
+        style="@style/LoginTitleStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/login_fragment_title_text"
+        app:layout_constraintBottom_toTopOf="@+id/textAppNameLoginFragment"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEndLoginFragment"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStartLoginFragment" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textAppNameLoginFragment"
+        style="@style/LoginAppNameStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_medium_20dp"
+        android:text="@string/app_name"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineTopLoginFragment"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEndLoginFragment"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStartLoginFragment" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputUserNameLoginFragment"
+        style="@style/TextInputLayoutStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:errorEnabled="true"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEndLoginFragment"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStartLoginFragment"
+        app:layout_constraintTop_toTopOf="@id/guidelineTopLoginFragment">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textEditUserNameLoginFragment"
+            style="@style/TextInputEditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/login_fragment_user_name_hint"
+            android:imeOptions="flagNavigateNext"
+            android:inputType="text"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputPasswordLoginFragment"
+        style="@style/TextInputLayoutStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:endIconMode="password_toggle"
+        app:endIconTint="@color/white"
+        app:errorEnabled="true"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEndLoginFragment"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStartLoginFragment"
+        app:layout_constraintTop_toBottomOf="@id/textInputUserNameLoginFragment">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textEditPasswordLoginFragment"
+            style="@style/TextInputEditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/login_fragment_password_hint"
+            android:imeOptions="actionDone|actionSend|actionGo"
+            android:inputType="textPassword"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonLoginFragment"
+        style="@style/LoginButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/login_fragment_button_height"
+        android:layout_marginTop="@dimen/margin_large_32dp"
+        android:text="@string/login_fragment_button"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEndLoginFragment"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStartLoginFragment"
+        app:layout_constraintTop_toBottomOf="@id/textInputPasswordLoginFragment" />
+
+    <androidx.core.widget.ContentLoadingProgressBar
+        android:id="@+id/progressBarLoginFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:theme="?android:attr/progressBarStyle"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/textInputPasswordLoginFragment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guidelineTopLoginFragment"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
