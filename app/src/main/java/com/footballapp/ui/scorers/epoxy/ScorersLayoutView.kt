@@ -6,7 +6,6 @@ import android.view.View
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.airbnb.epoxy.CallbackProp
-import com.airbnb.epoxy.ModelProp
 import com.airbnb.epoxy.ModelView
 import com.airbnb.epoxy.TextProp
 import com.footballapp.R
@@ -43,11 +42,6 @@ class ScorersLayoutView @JvmOverloads constructor(
     @TextProp
     fun setScore(score: CharSequence) {
         this.score.text = score
-    }
-
-    @ModelProp
-    fun setBackground(backGround:Int) {
-        rootLayout.setBackgroundColor(backGround)
     }
 
     @CallbackProp

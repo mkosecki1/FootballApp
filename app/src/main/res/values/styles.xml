@@ -5,6 +5,7 @@
         <item name="colorSecondary">@color/colorSecondary</item>
     </style>
 
+    <!-- LOGIN -->
     <style name="TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
         <item name="hintTextAppearance">@style/TopHintTextInputLayoutAppearance</item>
         <item name="errorTextColor">@color/red</item>
@@ -61,4 +62,17 @@
         <item name="android:textSize">@dimen/text_size_button_login_fragment</item>
         <item name="android:fontFamily">sans-serif-light</item>
     </style>
+
+    <!-- SCORERS -->
+    <style name="RecyclerPrimaryTextStyle" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/text_size_16_sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="RecyclerSecondaryTextStyle" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/text_size_14_sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
 </resources>

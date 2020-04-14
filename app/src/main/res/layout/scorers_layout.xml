@@ -6,15 +6,15 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:minHeight="@dimen/card_layout_height"
+    android:padding="@dimen/margin_small_10_dp"
+    android:background="@drawable/epoxy_recycler_card_shape"
     android:orientation="vertical">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/scorers_layout_name"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginStart="@dimen/margin_small_8_dp"
-        android:layout_marginTop="@dimen/margin_small_8_dp"
-        android:textSize="@dimen/text_size_16_sp"
+        style="@style/RecyclerPrimaryTextStyle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Player name" />
@@ -23,8 +23,7 @@
         android:id="@+id/scorers_layout_team"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginStart="@dimen/margin_small_8_dp"
-        android:layout_marginTop="@dimen/margin_small_8_dp"
+        style="@style/RecyclerSecondaryTextStyle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/scorers_layout_name"
         tools:text="team" />
@@ -33,9 +32,7 @@
         android:id="@+id/scorers_layout_goals"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginEnd="@dimen/margin_small_8_dp"
-        android:layout_marginTop="@dimen/margin_small_8_dp"
-        android:textSize="@dimen/text_size_16_sp"
+        style="@style/RecyclerPrimaryTextStyle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="10" />
