@@ -1,0 +1,57 @@
+package com.footballapp.ui.scorers.epoxy
+
+import android.content.Context
+import android.util.AttributeSet
+import android.view.View
+import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
+import com.airbnb.epoxy.CallbackProp
+import com.airbnb.epoxy.ModelProp
+import com.airbnb.epoxy.ModelView
+import com.airbnb.epoxy.TextProp
+import com.footballapp.R
+
+@ModelView(autoLayout = ModelView.Size.MATCH_WIDTH_WRAP_HEIGHT)
+class ScorersLayoutView @JvmOverloads constructor(
+    context: Context,
+    attributeSet: AttributeSet? = null,
+    defStyle: Int = 0
+) : ConstraintLayout(context, attributeSet, defStyle) {
+    private val rootLayout: ConstraintLayout
+    private val name: TextView
+    private val team: TextView
+    private val score: TextView
+
+    init {
+        View.inflate(context, R.layout.scorers_layout, this)
+        rootLayout = findViewById(R.id.scorers_layout)
+        name = findViewById(R.id.scorers_layout_name)
+        team = findViewById(R.id.scorers_layout_team)
+        score = findViewById(R.id.scorers_layout_goals)
+    }
+
+    @TextProp
+    fun setName(name: CharSequence) {
+        this.name.text = name
+    }
+
+    @TextProp
+    fun setTeam(team: CharSequence) {
+        this.team.text = team
+    }
+
+    @TextProp
+    fun setScore(score: CharSequence) {
+        this.score.text = score
+    }
+
+    @ModelProp
+    fun setBackground(backGround:Int) {
+        rootLayout.setBackgroundColor(backGround)
+    }
+
+    @CallbackProp
+    fun setItemClickListener(listener: OnClickListener?) {
+        rootLayout.setOnClickListener(listener)
+    }
+}

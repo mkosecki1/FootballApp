@@ -13,7 +13,7 @@ class MyApplication : Application() {
         startKoin {
             androidLogger(Level.DEBUG)
             androidContext(this@MyApplication)
-            modules(listOf(repositoryModule, apiModule, retrofitModule))
+            modules(listOf(repositoryModule, apiModule, retrofitModule, viewModelModule))
         }
     }
 }

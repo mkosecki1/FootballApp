@@ -2,11 +2,10 @@ package com.footballapp.repository
 
 import com.footballapp.net.ResponseCall
 import retrofit2.Response
-import java.lang.Exception
 
 open class BaseRepository {
 
-    suspend fun <T: Any> call(call: suspend () -> Response<T>) : ResponseCall<T> {
+    suspend fun <T : Any> call(call: suspend () -> Response<T>): ResponseCall<T> {
         try {
             val response = call.invoke()
 
@@ -21,6 +20,7 @@ open class BaseRepository {
                     response.errorBody()?.string() ?: ""
                 )
             }
+
             //HTTP Exception
         } catch (e: Exception) {
             return ResponseCall.Exception(e)
