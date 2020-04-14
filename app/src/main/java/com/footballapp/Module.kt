@@ -2,6 +2,8 @@ package com.footballapp
 
 import com.footballapp.net.RestApi
 import com.footballapp.repository.Repository
+import com.footballapp.ui.login.LoginData
+import com.footballapp.ui.login.LoginViewModel
 import com.footballapp.ui.scorers.ScorersViewModel
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.Gson
@@ -18,6 +20,7 @@ const val HEADER_NAME = "X-Auth-Token"
 const val HEADER_VALUE = "97a5f465440a4bd4bbe735a791adbc78"
 
 val viewModelModule = module {
+    viewModel { LoginViewModel(LoginData(null, null)) }
     viewModel { ScorersViewModel(get()) }
 }
 
