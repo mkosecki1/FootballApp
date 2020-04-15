@@ -15,6 +15,7 @@ class EpoxyScorersController(
                 name(scorer.player.name)
                 team(scorer.team.name)
                 score(scorer.numberOfGoals.toString() + GOALS)
+                placeNumber("${index+1}.")
             }
         }
     }

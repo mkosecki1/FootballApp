@@ -75,4 +75,11 @@
         <item name="android:textColor">@color/white</item>
     </style>
 
+    <style name="CompetitionTextStyle" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/text_size_18_sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:paddingStart">@dimen/margin_small_10_dp</item>
+        <item name="android:paddingEnd">@dimen/margin_small_10_dp</item>
+    </style>
+
 </resources>

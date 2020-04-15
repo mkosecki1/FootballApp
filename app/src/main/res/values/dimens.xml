@@ -13,6 +13,7 @@
     <dimen name="text_size_12_sp">12sp</dimen>
     <dimen name="text_size_14_sp">14sp</dimen>
     <dimen name="text_size_16_sp">16sp</dimen>
+    <dimen name="text_size_18_sp">18sp</dimen>
 
     <!-- LOGIN SCREEN -->
     <dimen name="login_fragment_button_height">40dp</dimen>
@@ -26,7 +27,7 @@
     <!-- SCORERS SCREEN -->
     <dimen name="recycler_margin_medium">12dp</dimen>
     <dimen name="recycler_margin_big">16dp</dimen>
-    <dimen name="card_layout_height">80dp</dimen>
+    <dimen name="card_layout_height">70dp</dimen>
 
     <!-- OTHERS -->
     <dimen name="radius_micro">5dp</dimen>

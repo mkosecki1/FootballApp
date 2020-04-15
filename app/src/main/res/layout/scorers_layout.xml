@@ -2,37 +2,48 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/scorers_layout"
+    android:id="@+id/scorersLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:minHeight="@dimen/card_layout_height"
-    android:padding="@dimen/margin_small_10_dp"
     android:background="@drawable/epoxy_recycler_card_shape"
-    android:orientation="vertical">
+    android:minHeight="@dimen/card_layout_height"
+    android:orientation="vertical"
+    android:padding="@dimen/margin_small_10_dp">
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/scorers_layout_name"
+        android:id="@+id/placeNumberScorersLayout"
+        style="@style/RecyclerPrimaryTextStyle"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        style="@style/RecyclerPrimaryTextStyle"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="No" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/nameScorersLayout"
+        style="@style/RecyclerPrimaryTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/margin_small_8_dp"
+        app:layout_constraintStart_toEndOf="@+id/placeNumberScorersLayout"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Player name" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/scorers_layout_team"
+        android:id="@+id/teamScorersLayout"
+        style="@style/RecyclerSecondaryTextStyle"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        style="@style/RecyclerSecondaryTextStyle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/scorers_layout_name"
+        android:layout_marginStart="@dimen/margin_small_8_dp"
+        app:layout_constraintTop_toBottomOf="@id/nameScorersLayout"
+        app:layout_constraintStart_toEndOf="@+id/placeNumberScorersLayout"
         tools:text="team" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/scorers_layout_goals"
+        android:id="@+id/goalsScorersLayout"
+        style="@style/RecyclerPrimaryTextStyle"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        style="@style/RecyclerPrimaryTextStyle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="10" />
