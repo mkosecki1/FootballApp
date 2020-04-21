@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "358837452609",
+    "firebase_url": "https://footballapp-c94a3.firebaseio.com",
+    "project_id": "footballapp-c94a3",
+    "storage_bucket": "footballapp-c94a3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:358837452609:android:0429b5fbeca22842bdabc0",
+        "android_client_info": {
+          "package_name": "com.footballapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "358837452609-bbr6qmep1cf0q7115m0ftc8i8bv1sh8f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.footballapp",
+            "certificate_hash": "3dd1489a7ee5c1defdcd41ec3118be747d8d881b"
+          }
+        },
+        {
+          "client_id": "358837452609-bco64e9v0m3hubv8vcjghho993jmblfa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZzVjU2yU_xiE3C0IdU-jbTaZxcywe2yA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "358837452609-bco64e9v0m3hubv8vcjghho993jmblfa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

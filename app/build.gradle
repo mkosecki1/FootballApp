@@ -1,10 +1,9 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
-
 apply plugin: 'kotlin-kapt'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: "androidx.navigation.safeargs.kotlin"
 
 kapt {
     correctErrorTypes = true
@@ -64,9 +63,14 @@ dependencies {
     // Epoxy
     implementation 'com.airbnb.android:epoxy:3.9.0'
     kapt 'com.airbnb.android:epoxy-processor:3.9.0'
+
+    // Navigation
     implementation 'androidx.navigation:navigation-fragment-ktx:2.2.1'
     implementation 'androidx.navigation:navigation-ui-ktx:2.2.1'
 
     // ViewPager2
     implementation "androidx.viewpager2:viewpager2:1.0.0"
+
+    // Firebase
+    implementation 'com.firebaseui:firebase-ui-auth:5.0.0'
 }

@@ -9,7 +9,11 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.footballapp.ui.login.LoginFragment"
-        android:label="fragment_login"/>
+        android:label="fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_scorersFragment"
+            app:destination="@id/scorersFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/scorersFragment"
