@@ -5,6 +5,10 @@
         <item name="colorSecondary">@color/colorSecondary</item>
     </style>
 
+      <style name="AppTheme.Launcher" parent="Theme.AppCompat.DayNight">
+        <item name="android:windowBackground">@drawable/launch_screen</item>
+    </style>
+  
     <!-- LOGIN -->
     <style name="TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
         <item name="hintTextAppearance">@style/TopHintTextInputLayoutAppearance</item>
