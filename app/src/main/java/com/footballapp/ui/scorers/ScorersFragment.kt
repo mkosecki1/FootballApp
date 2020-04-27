@@ -32,12 +32,12 @@ class ScorersFragment : Fragment() {
                 when (it) {
                     is ResponseCall.Success -> {
                         competitionScorersFragment.stringConnector(
-                            getString(R.string.scorers_fragment_competition_title),
+                            getString(R.string.competition_title_text),
                             it.data.competition.name,
                             null
                         )
                         seasonScorersFragment.stringConnector(
-                            getString(R.string.scorers_fragment_season_title),
+                            getString(R.string.season_title_text),
                             it.data.season?.startDate,
                             it.data.season?.endDate
                         )

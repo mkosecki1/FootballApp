@@ -10,8 +10,6 @@
     <string name="login_fragment_error_empty_password_text">Enter password</string>
     <string name="login_fragment_error_invalid_login_or_password_text">Invalid login or password</string>
     <string name="login_fragment_internet_unavailable_text">Internet connection unavailable</string>
-
-    <!-- SCORERS -->
-    <string name="scorers_fragment_competition_title">League:</string>
-    <string name="scorers_fragment_season_title">Season:</string>
+    <string name="competition_title_text">League:</string>
+    <string name="season_title_text">Season:</string>
 </resources>

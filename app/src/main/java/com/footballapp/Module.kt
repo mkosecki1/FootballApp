@@ -6,6 +6,7 @@ import com.footballapp.repository.Repository
 import com.footballapp.ui.login.LoginData
 import com.footballapp.ui.login.LoginViewModel
 import com.footballapp.ui.scorers.ScorersViewModel
+import com.footballapp.ui.standings.StandingsViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.Gson
@@ -24,6 +25,13 @@ const val HEADER_VALUE = "97a5f465440a4bd4bbe735a791adbc78"
 val viewModelModule = module {
     viewModel { LoginViewModel(LoginData(login = null, password = null), repository = get()) }
     viewModel { ScorersViewModel(repository = get()) }
+    viewModel { StandingsViewModel(repository = get()) }
+}
+
+val repositoryModule = module {
+    single {
+        Repository(get(), get())
+    }
 }
 
 val firebaseAuthModule = module {
@@ -35,12 +43,6 @@ val firebaseAuthModule = module {
 val connectionModule = module {
     single {
         ConnectionManager()
-    }
-}
-
-val repositoryModule = module {
-    single {
-        Repository(get(), get())
     }
 }
 
