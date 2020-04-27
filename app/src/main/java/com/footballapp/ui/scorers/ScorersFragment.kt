@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.footballapp.R
 import com.footballapp.ext.stringConnector
+import com.footballapp.model.ScorersModel
 import com.footballapp.net.ResponseCall
 import com.footballapp.ui.scorers.epoxy.EpoxyScorersController
 import kotlinx.android.synthetic.main.scorers_fragment.*
@@ -30,24 +31,36 @@ class ScorersFragment : Fragment() {
             viewLifecycleOwner, Observer {
                 when (it) {
                     is ResponseCall.Success -> {
-                        scorers_fragment_competition.text = it.data.competition.name
-                        scorers_fragment_season.text = stringConnector(it.data.season?.startDate, it.data.season?.endDate)
+                        competitionScorersFragment.stringConnector(
+                            getString(R.string.scorers_fragment_competition_title),
+                            it.data.competition.name,
+                            null
+                        )
+                        seasonScorersFragment.stringConnector(
+                            getString(R.string.scorers_fragment_season_title),
+                            it.data.season?.startDate,
+                            it.data.season?.endDate
+                        )
 
-                        epoxyScorersController = EpoxyScorersController(it.data)
-                        epoxyScorersController.setData(true)
-                        scorers_fragment_epoxy_recycler_view.setController(epoxyScorersController)
+                        runEpoxyController(it.data)
                     }
 
                     is ResponseCall.Error -> {
-                        scorers_fragment_competition.text = it.message
+                        competitionScorersFragment.text = it.message
                     }
 
                     is ResponseCall.Exception -> {
-                        scorers_fragment_competition.text = it.exception.message
+                        competitionScorersFragment.text = it.exception.message
                     }
                 }
             }
         )
         return inflate
+    }
+
+    private fun runEpoxyController(scorersModel: ScorersModel) {
+        epoxyScorersController = EpoxyScorersController(scorersModel)
+        epoxyScorersController.setData(true)
+        recyclerViewScorersFragment.setController(epoxyScorersController)
     }
 }

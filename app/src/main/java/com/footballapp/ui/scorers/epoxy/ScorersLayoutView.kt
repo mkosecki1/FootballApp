@@ -6,7 +6,6 @@ import android.view.View
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.airbnb.epoxy.CallbackProp
-import com.airbnb.epoxy.ModelProp
 import com.airbnb.epoxy.ModelView
 import com.airbnb.epoxy.TextProp
 import com.footballapp.R
@@ -21,13 +20,15 @@ class ScorersLayoutView @JvmOverloads constructor(
     private val name: TextView
     private val team: TextView
     private val score: TextView
+    private val placeNumber: TextView
 
     init {
         View.inflate(context, R.layout.scorers_layout, this)
-        rootLayout = findViewById(R.id.scorers_layout)
-        name = findViewById(R.id.scorers_layout_name)
-        team = findViewById(R.id.scorers_layout_team)
-        score = findViewById(R.id.scorers_layout_goals)
+        rootLayout = findViewById(R.id.scorersLayout)
+        name = findViewById(R.id.nameScorersLayout)
+        team = findViewById(R.id.teamScorersLayout)
+        score = findViewById(R.id.goalsScorersLayout)
+        placeNumber = findViewById(R.id.placeNumberScorersLayout)
     }
 
     @TextProp
@@ -45,9 +46,9 @@ class ScorersLayoutView @JvmOverloads constructor(
         this.score.text = score
     }
 
-    @ModelProp
-    fun setBackground(backGround:Int) {
-        rootLayout.setBackgroundColor(backGround)
+    @TextProp
+    fun setPlaceNumber(placeNumber: CharSequence) {
+        this.placeNumber.text = placeNumber
     }
 
     @CallbackProp
