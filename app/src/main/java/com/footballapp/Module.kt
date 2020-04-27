@@ -1,5 +1,6 @@
 package com.footballapp
 
+import com.footballapp.net.ConnectionManager
 import com.footballapp.net.RestApi
 import com.footballapp.repository.Repository
 import com.footballapp.ui.login.LoginData
@@ -21,8 +22,8 @@ const val HEADER_NAME = "X-Auth-Token"
 const val HEADER_VALUE = "97a5f465440a4bd4bbe735a791adbc78"
 
 val viewModelModule = module {
-    viewModel { LoginViewModel(LoginData(null, null)) }
-    viewModel { ScorersViewModel(get()) }
+    viewModel { LoginViewModel(LoginData(login = null, password = null), repository = get()) }
+    viewModel { ScorersViewModel(repository = get()) }
 }
 
 val firebaseAuthModule = module {
@@ -31,9 +32,15 @@ val firebaseAuthModule = module {
     }
 }
 
+val connectionModule = module {
+    single {
+        ConnectionManager()
+    }
+}
+
 val repositoryModule = module {
     single {
-        Repository(get())
+        Repository(get(), get())
     }
 }
 
