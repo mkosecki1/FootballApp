@@ -8,6 +8,7 @@
     <string name="login_fragment_password_hint">Password</string>
     <string name="login_fragment_error_invalid_format_text">Invalid login format</string>
     <string name="login_fragment_error_empty_password_text">Enter password</string>
+    <string name="login_fragment_error_invalid_login_or_password_text">Invalid login or password</string>
 
     <!-- SCORERS -->
     <string name="scorers_fragment_competition_title">League:</string>

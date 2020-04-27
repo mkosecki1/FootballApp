@@ -1,7 +1,7 @@
 package com.footballapp.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.footballapp.R
 
 class MainActivity : AppCompatActivity() {
