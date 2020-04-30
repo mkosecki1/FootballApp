@@ -75,7 +75,7 @@
     </style>
 
     <!-- SCORERS -->
-    <style name="RecyclerPrimaryTextStyle" parent="TextAppearance.AppCompat">
+    <style name="RecyclerScorersPrimaryTextStyle" parent="TextAppearance.AppCompat">
         <item name="android:textSize">@dimen/text_size_16_sp</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:textStyle">bold</item>
@@ -84,6 +84,18 @@
     <style name="RecyclerSecondaryTextStyle" parent="TextAppearance.AppCompat">
         <item name="android:textSize">@dimen/text_size_14_sp</item>
         <item name="android:textColor">@color/white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginStart">2dp</item>
+        <item name="android:layout_marginEnd">2dp</item>
+    </style>
+
+    <!-- STANDINGS -->
+    <style name="RecyclerStandingsPrimaryTextStyle" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/text_size_14_sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginStart">2dp</item>
+        <item name="android:layout_marginEnd">2dp</item>
     </style>
 
 </resources>

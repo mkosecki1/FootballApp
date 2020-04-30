@@ -4,6 +4,8 @@
     <color name="colorPrimaryDark">#33691E</color>
     <color name="colorSecondary">#8BC34A</color>
     <color name="white">#FFFFFF</color>
-    <color name="red">#C91313</color>
+    <color name="red">#F86464</color>
     <color name="loginRippleEffect">#801D1D1D</color>
+    <color name="grey">#6F6D6D</color>
+    <color name="yellow">#F5DA46</color>
 </resources>

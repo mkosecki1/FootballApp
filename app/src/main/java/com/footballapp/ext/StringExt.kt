@@ -15,5 +15,12 @@ fun TextView.stringConnector(s1: String?, s2: String?, s3: String?) {
     }
 }
 
+fun TextView.addDot(s1: String) {
+    text = buildSpannedString {
+        append(s1)
+        append(".")
+    }
+}
+
 fun String.emailValidation(): String? =
     if (Patterns.EMAIL_ADDRESS.matcher(this).matches()) this else null

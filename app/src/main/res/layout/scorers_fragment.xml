@@ -7,6 +7,16 @@
     android:background="@color/colorPrimary"
     tools:context=".ui.scorers.ScorersFragment">
 
+    <ImageView
+        android:id="@+id/logoScorersFragment"
+        android:layout_width="@dimen/bundesliga_logo_height"
+        android:layout_height="@dimen/bundesliga_logo_width"
+        android:layout_marginStart="@dimen/margin_small_10_dp"
+        android:layout_marginTop="@dimen/margin_small_10_dp"
+        android:src="@drawable/bundesliga_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/competitionScorersFragment"
         style="@style/CompetitionTextStyle"
