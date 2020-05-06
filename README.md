@@ -1,8 +1,5 @@
 # FootballApp
 - WORK IN PROGRESS
-<div class="text-red mb-2">
-  .text-red on white
-</div>
 
 An application showing Bundesliga statistics. Currently my work focused on three screens are: login, top scorers, league table.
 
