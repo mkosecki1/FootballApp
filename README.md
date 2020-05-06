@@ -20,4 +20,4 @@ Screen where user can check top scorers in actual season.
 # Table screen
 Screen where user can check actual season table.
 
-<img src="https://ibb.co/xH3DBBb" height=500 width=250>
+<img src="https://i.ibb.co/TLrk77G/screen-3.png" height=500 width=250>
