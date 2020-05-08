@@ -9,7 +9,6 @@
     <string name="login_fragment_error_invalid_format_text">Invalid login format</string>
     <string name="login_fragment_error_empty_password_text">Enter password</string>
     <string name="login_fragment_error_invalid_login_or_password_text">Invalid login or password</string>
-    <string name="login_fragment_internet_unavailable_text">Internet connection unavailable</string>
 
     <!-- STANDINGS -->
     <string name="standings_fragment_position_text">Pos.</string>
@@ -23,4 +22,6 @@
     <!-- OTHER -->
     <string name="competition_title_text">League:</string>
     <string name="season_title_text">Season:</string>
+    <string name="internet_unavailable_text">Internet connection unavailable</string>
+    <string name="server_error_text">Sorry, there was an error on the server.</string>
 </resources>

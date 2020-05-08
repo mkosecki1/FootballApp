@@ -88,7 +88,7 @@ class LoginFragment : Fragment() {
                 textEditPasswordLoginFragment.text.toString().trim()
             )
         } else {
-            constraintLayoutLoginFragment.showSnackBar(getString(R.string.login_fragment_internet_unavailable_text))
+            constraintLayoutLoginFragment.showSnackBar(getString(R.string.internet_unavailable_text))
         }
     }
 }
