@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_main"
-    app:startDestination="@id/scorersFragment"
+    app:startDestination="@id/standingsFragment"
     tools:ignore="UnusedNavigation">
 
     <fragment
@@ -18,6 +18,11 @@
     <fragment
         android:id="@+id/scorersFragment"
         android:name="com.footballapp.ui.scorers.ScorersFragment"
+        android:label="fragment_login"/>
+
+    <fragment
+        android:id="@+id/standingsFragment"
+        android:name="com.footballapp.ui.standings.StandingsFragment"
         android:label="fragment_login"/>
 
 </navigation>

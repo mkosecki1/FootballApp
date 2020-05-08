@@ -6,13 +6,13 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/epoxy_recycler_card_shape"
-    android:minHeight="@dimen/card_layout_height"
+    android:minHeight="@dimen/scorers_card_layout_height"
     android:orientation="vertical"
     android:padding="@dimen/margin_small_10_dp">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/placeNumberScorersLayout"
-        style="@style/RecyclerPrimaryTextStyle"
+        style="@style/RecyclerScorersPrimaryTextStyle"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,7 +21,7 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/nameScorersLayout"
-        style="@style/RecyclerPrimaryTextStyle"
+        style="@style/RecyclerScorersPrimaryTextStyle"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginStart="@dimen/margin_small_8_dp"
@@ -41,7 +41,7 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/goalsScorersLayout"
-        style="@style/RecyclerPrimaryTextStyle"
+        style="@style/RecyclerScorersPrimaryTextStyle"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         app:layout_constraintEnd_toEndOf="parent"

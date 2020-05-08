@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".ui.scorers.ScorersFragment">
+    tools:context=".ui.standings.StandingsFragment">
 
     <ImageView
-        android:id="@+id/logoScorersFragment"
+        android:id="@+id/logoStandingsFragment"
         android:layout_width="@dimen/bundesliga_logo_height"
         android:layout_height="@dimen/bundesliga_logo_width"
         android:layout_marginStart="@dimen/margin_small_10_dp"
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/competitionScorersFragment"
+        android:id="@+id/competitionStandingsFragment"
         style="@style/CompetitionTextStyle"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -30,7 +30,7 @@
         tools:text="League" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/seasonScorersFragment"
+        android:id="@+id/seasonStandingsFragment"
         style="@style/CompetitionTextStyle"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -38,21 +38,29 @@
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/competitionScorersFragment"
+        app:layout_constraintTop_toBottomOf="@+id/competitionStandingsFragment"
         tools:text="Season" />
 
-    <com.airbnb.epoxy.EpoxyRecyclerView
-        android:id="@+id/recyclerViewScorersFragment"
+    <include
+        android:id="@+id/recyclerBarStandingsFragment"
+        layout="@layout/standings_recycler_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/standings_bar_layout_height"
+        android:layout_marginTop="@dimen/recycler_margin_big"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seasonStandingsFragment" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewStandingsFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginStart="@dimen/recycler_margin_medium"
-        android:layout_marginTop="@dimen/recycler_margin_big"
-        android:layout_marginEnd="@dimen/recycler_margin_medium"
-        android:layout_weight="1"
-        app:itemSpacing="@dimen/margin_small_4_dp"
+        android:layout_marginTop="@dimen/margin_small_2_dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/seasonScorersFragment" />
+        app:layout_constraintTop_toBottomOf="@+id/recyclerBarStandingsFragment" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -66,7 +66,7 @@
             style="@style/TextInputEditTextStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/login_fragment_user_name_hint"
+            android:hint="@string/login_fragment_user_name_hint_text"
             android:imeOptions="flagNavigateNext"
             android:inputType="text"
             android:maxLines="1" />
@@ -89,7 +89,7 @@
             style="@style/TextInputEditTextStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/login_fragment_password_hint"
+            android:hint="@string/login_fragment_password_hint_text"
             android:imeOptions="actionDone|actionSend|actionGo"
             android:inputType="textPassword"
             android:maxLines="1" />
@@ -101,7 +101,7 @@
         android:layout_width="0dp"
         android:layout_height="@dimen/login_fragment_button_height"
         android:layout_marginTop="@dimen/margin_large_32dp"
-        android:text="@string/login_fragment_button"
+        android:text="@string/login_fragment_button_text"
         app:layout_constraintEnd_toStartOf="@+id/guidelineEndLoginFragment"
         app:layout_constraintStart_toStartOf="@+id/guidelineStartLoginFragment"
         app:layout_constraintTop_toBottomOf="@id/textInputPasswordLoginFragment" />
