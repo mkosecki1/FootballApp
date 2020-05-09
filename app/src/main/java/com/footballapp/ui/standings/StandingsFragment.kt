@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.footballapp.R
+import com.footballapp.ext.setVisible
 import com.footballapp.ext.showSnackBar
 import com.footballapp.ext.stringConnector
 import com.footballapp.model.StandingsModel.Standing.Table
@@ -54,7 +55,6 @@ class StandingsFragment : Fragment() {
         )
 
         return inflate
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -78,6 +78,9 @@ class StandingsFragment : Fragment() {
             endDate
         )
         standingsAdapter.updateTable(table)
+        progressBarStandingsFragment.hide()
+        logoStandingsFragment.setVisible()
+        recyclerBarStandingsFragment.setVisible()
     }
 
     private fun onError(error: String) {

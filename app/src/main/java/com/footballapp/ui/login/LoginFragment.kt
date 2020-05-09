@@ -45,6 +45,7 @@ class LoginFragment : Fragment() {
             )
             checkInternetConnection()
             view.hideKeyboard()
+            progressBarLoginFragment.show()
         }
     }
 
