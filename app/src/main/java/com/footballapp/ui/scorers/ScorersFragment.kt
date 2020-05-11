@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.footballapp.R
+import com.footballapp.ext.setVisible
 import com.footballapp.ext.showSnackBar
 import com.footballapp.ext.stringConnector
 import com.footballapp.model.ScorersModel
@@ -27,6 +28,8 @@ class ScorersFragment : Fragment() {
     ): View? {
         val inflate = inflater.inflate(R.layout.scorers_fragment, container, false)
         scorersViewModel.loadScorers()
+
+//        progressBarScorersFragment.visibility = View.VISIBLE
 
         scorersViewModel.scorersStatus.observe(
             viewLifecycleOwner, Observer {
@@ -76,6 +79,8 @@ class ScorersFragment : Fragment() {
             endDate
         )
         runEpoxyController(scorersModel)
+        progressBarScorersFragment.hide()
+        logoScorersFragment.setVisible()
     }
 
     private fun onError(error: String) {

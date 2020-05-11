@@ -24,3 +24,7 @@ fun ImageView.loadImage(activity: Activity, uri: String) {
         .load(uri)
         .into(this)
 }
+
+fun View.setVisible() {
+    this.visibility = View.VISIBLE
+}

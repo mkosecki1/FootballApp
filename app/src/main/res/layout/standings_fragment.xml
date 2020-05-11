@@ -15,6 +15,7 @@
         android:layout_marginStart="@dimen/margin_small_10_dp"
         android:layout_marginTop="@dimen/margin_small_10_dp"
         android:src="@drawable/bundesliga_logo"
+        android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -48,6 +49,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/standings_bar_layout_height"
         android:layout_marginTop="@dimen/recycler_margin_big"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/seasonStandingsFragment" />
@@ -62,6 +64,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recyclerBarStandingsFragment" />
 
-
+    <androidx.core.widget.ContentLoadingProgressBar
+        android:id="@+id/progressBarStandingsFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:theme="?android:attr/progressBarStyle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
