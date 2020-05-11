@@ -45,7 +45,6 @@ class LoginFragment : Fragment() {
             )
             checkInternetConnection()
             view.hideKeyboard()
-            progressBarLoginFragment.show()
         }
     }
 
@@ -83,6 +82,7 @@ class LoginFragment : Fragment() {
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
                         runScorers()
+                        progressBarLoginFragment.show()
                     } else {
                         constraintLayoutLoginFragment.showSnackBar(getString(R.string.login_fragment_error_invalid_login_or_password_text))
                     }
