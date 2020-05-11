@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.footballapp.R
+import com.footballapp.ext.showSnackBar
 import com.footballapp.ext.stringConnector
 import com.footballapp.model.ScorersModel
 import com.footballapp.net.ResponseCall
@@ -31,26 +32,20 @@ class ScorersFragment : Fragment() {
             viewLifecycleOwner, Observer {
                 when (it) {
                     is ResponseCall.Success -> {
-                        competitionScorersFragment.stringConnector(
-                            getString(R.string.competition_title_text),
+                        onSuccess(
                             it.data.competition.name,
-                            null
-                        )
-                        seasonScorersFragment.stringConnector(
-                            getString(R.string.season_title_text),
                             it.data.season?.startDate,
-                            it.data.season?.endDate
+                            it.data.season?.endDate,
+                            it.data
                         )
-
-                        runEpoxyController(it.data)
                     }
 
                     is ResponseCall.Error -> {
-                        competitionScorersFragment.text = it.message
+                        onError(getString(R.string.server_error_text))
                     }
 
                     is ResponseCall.Exception -> {
-                        competitionScorersFragment.text = it.exception.message
+                        onException(getString(R.string.internet_unavailable_text))
                     }
                 }
             }
@@ -62,5 +57,32 @@ class ScorersFragment : Fragment() {
         epoxyScorersController = EpoxyScorersController(scorersModel)
         epoxyScorersController.setData(true)
         recyclerViewScorersFragment.setController(epoxyScorersController)
+    }
+
+    private fun onSuccess(
+        name: String?,
+        startDate: String?,
+        endDate: String?,
+        scorersModel: ScorersModel
+    ) {
+        competitionScorersFragment.stringConnector(
+            getString(R.string.competition_title_text),
+            name,
+            null
+        )
+        seasonScorersFragment.stringConnector(
+            getString(R.string.season_title_text),
+            startDate,
+            endDate
+        )
+        runEpoxyController(scorersModel)
+    }
+
+    private fun onError(error: String) {
+        constraintLayoutScorersFragment.showSnackBar(error)
+    }
+
+    private fun onException(exception: String) {
+        constraintLayoutScorersFragment.showSnackBar(exception)
     }
 }
