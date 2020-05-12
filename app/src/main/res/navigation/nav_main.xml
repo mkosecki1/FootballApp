@@ -18,11 +18,19 @@
     <fragment
         android:id="@+id/scorersFragment"
         android:name="com.footballapp.ui.scorers.ScorersFragment"
-        android:label="fragment_login"/>
+        android:label="fragment_login">
+        <action
+            android:id="@+id/action_scorersFragment_to_standingsFragment"
+            app:destination="@id/standingsFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/standingsFragment"
         android:name="com.footballapp.ui.standings.StandingsFragment"
-        android:label="fragment_login"/>
+        android:label="fragment_login">
+        <action
+            android:id="@+id/action_standingsFragment_to_scorersFragment"
+            app:destination="@id/scorersFragment" />
+    </fragment>
 
 </navigation>
