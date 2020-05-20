@@ -4,8 +4,11 @@ import android.net.ConnectivityManager
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.map
 import com.footballapp.ext.emailValidation
 import com.footballapp.repository.Repository
+import com.footballapp.ui.login.FirebaseUserLiveData.AuthenticationState.AUTHENTICATED
+import com.footballapp.ui.login.FirebaseUserLiveData.AuthenticationState.UNAUTHENTICATED
 
 class LoginViewModel(private val repository: Repository) : ViewModel() {
 
@@ -14,6 +17,10 @@ class LoginViewModel(private val repository: Repository) : ViewModel() {
 
     val isLoginFormatInvalid: LiveData<Boolean> = _isLoginFormatInvalid
     val isPasswordEmpty: LiveData<Boolean> = _isPasswordEmpty
+
+    val authenticationState = FirebaseUserLiveData().map { user ->
+        if (user != null) AUTHENTICATED else UNAUTHENTICATED
+    }
 
     fun setupLoginData(login: String, password: String) {
         _isLoginFormatInvalid.value = login.emailValidation().isNullOrEmpty()

@@ -72,7 +72,7 @@
         android:id="@+id/navBarScorersFragment"
         android:layout_width="match_parent"
         android:layout_height="@dimen/nav_bar_height"
-        android:weightSum="2"
+        android:weightSum="3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -82,8 +82,8 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/lightGrey"
-            android:src="@drawable/image_ball_color2"
+            android:background="@drawable/navigation_bar_shape"
+            android:src="@drawable/image_ball_color"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/goToStandingsButtonScorersFragment"
             app:layout_constraintHorizontal_bias="0.5"
@@ -95,12 +95,25 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/lightGrey"
+            android:background="@drawable/navigation_bar_shape"
             android:src="@drawable/image_table_linear"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/logoutButtonScorersFragment"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/scorersButtonScorersFragment"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/logoutButtonScorersFragment"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/navigation_bar_shape"
+            android:src="@drawable/image_logout_linear"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/scorersButtonScorersFragment"
+            app:layout_constraintStart_toEndOf="@+id/goToStandingsButtonScorersFragment"
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
