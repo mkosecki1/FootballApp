@@ -12,7 +12,7 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.footballapp.R
 import com.footballapp.ext.hideKeyboard
-import com.footballapp.ext.setErrorText
+import com.footballapp.ext.showErrorMassage
 import com.footballapp.ext.showSnackBar
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.login_fragment.*
@@ -55,16 +55,26 @@ class LoginFragment : Fragment() {
     }
 
     private fun observeLoginDataChange() {
-        loginViewModel.isLoginDataValid.observe(
-            viewLifecycleOwner,
-            Observer { loginData ->
-                textInputUserNameLoginFragment.setErrorText(
-                    loginData.checkLoginValidation(getString(R.string.login_fragment_error_invalid_format_text))
-                )
-                textInputPasswordLoginFragment.setErrorText(
-                    loginData.checkPasswordValidation(getString(R.string.login_fragment_error_empty_password_text))
-                )
-            })
+        with(loginViewModel) {
+            isLoginFormatInvalid.observe(
+                viewLifecycleOwner,
+                Observer { login ->
+                    textInputUserNameLoginFragment.showErrorMassage(
+                        login,
+                        getString(R.string.login_fragment_error_invalid_format_text)
+                    )
+                })
+
+            isPasswordEmpty.observe(
+                viewLifecycleOwner, Observer { password ->
+                    textInputPasswordLoginFragment.showErrorMassage(
+                        password,
+                        getString(R.string.login_fragment_error_empty_password_text)
+                    )
+                }
+            )
+        }
+
     }
 
     private fun launchSignInFlow(login: String, password: String) {

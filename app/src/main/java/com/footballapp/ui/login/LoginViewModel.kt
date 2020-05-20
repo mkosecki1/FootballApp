@@ -4,22 +4,22 @@ import android.net.ConnectivityManager
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.footballapp.ext.emailValidation
 import com.footballapp.repository.Repository
 
-class LoginViewModel(
-    private val initialState: LoginData,
-    private val repository: Repository
-) : ViewModel() {
+class LoginViewModel(private val repository: Repository) : ViewModel() {
 
-    private val _isLoginDataValid = MutableLiveData<LoginData>()
+    private val _isLoginFormatInvalid = MutableLiveData<Boolean>()
+    private val _isPasswordEmpty = MutableLiveData<Boolean>()
 
-    val isLoginDataValid: LiveData<LoginData> = _isLoginDataValid
+    val isLoginFormatInvalid: LiveData<Boolean> = _isLoginFormatInvalid
+    val isPasswordEmpty: LiveData<Boolean> = _isPasswordEmpty
 
     fun setupLoginData(login: String, password: String) {
-        _isLoginDataValid.value = _isLoginDataValid.value?.copy(login, password) ?: initialState
+        _isLoginFormatInvalid.value = login.emailValidation().isNullOrEmpty()
+        _isPasswordEmpty.value = password.isEmpty()
     }
 
     fun hasNetworkConnection(connectivityManager: ConnectivityManager) =
         repository.hasNetworkConnection(connectivityManager)
-
 }
