@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.footballapp.R
 import com.footballapp.ext.setVisible
 import com.footballapp.ext.showSnackBar
@@ -28,8 +29,6 @@ class ScorersFragment : Fragment() {
     ): View? {
         val inflate = inflater.inflate(R.layout.scorers_fragment, container, false)
         scorersViewModel.loadScorers()
-
-//        progressBarScorersFragment.visibility = View.VISIBLE
 
         scorersViewModel.scorersStatus.observe(
             viewLifecycleOwner, Observer {
@@ -56,6 +55,14 @@ class ScorersFragment : Fragment() {
         return inflate
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        goToStandingsButtonScorersFragment.setOnClickListener {
+            runStandings()
+        }
+    }
+
     private fun runEpoxyController(scorersModel: ScorersModel) {
         epoxyScorersController = EpoxyScorersController(scorersModel)
         epoxyScorersController.setData(true)
@@ -69,8 +76,8 @@ class ScorersFragment : Fragment() {
         scorersModel: ScorersModel
     ) {
         competitionScorersFragment.stringConnector(
-            getString(R.string.competition_title_text),
             name,
+            getString(R.string.scorers_title_text),
             null
         )
         seasonScorersFragment.stringConnector(
@@ -89,5 +96,10 @@ class ScorersFragment : Fragment() {
 
     private fun onException(exception: String) {
         constraintLayoutScorersFragment.showSnackBar(exception)
+    }
+
+    private fun runStandings() {
+        val action = ScorersFragmentDirections.actionScorersFragmentToStandingsFragment()
+        findNavController().navigate(action)
     }
 }

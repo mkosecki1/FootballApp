@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.footballapp.R
 import com.footballapp.ext.setVisible
@@ -60,16 +61,16 @@ class StandingsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        recyclerViewStandingsFragment.apply {
-            layoutManager = LinearLayoutManager(activity)
-            adapter = standingsAdapter
+        runRecyclerView()
+        goToScorersButtonStandingsFragment.setOnClickListener {
+            runScorers()
         }
     }
 
     private fun onSuccess(name: String?, startDate: String?, endDate: String?, table: List<Table>) {
         competitionStandingsFragment.stringConnector(
-            getString(R.string.competition_title_text),
             name,
+            getString(R.string.standings_title_text),
             null
         )
         seasonStandingsFragment.stringConnector(
@@ -89,5 +90,17 @@ class StandingsFragment : Fragment() {
 
     private fun onException(exception: String) {
         constraintLayoutStandingsFragment.showSnackBar(exception)
+    }
+
+    private fun runRecyclerView() {
+        recyclerViewStandingsFragment.apply {
+            layoutManager = LinearLayoutManager(activity)
+            adapter = standingsAdapter
+        }
+    }
+
+    private fun runScorers() {
+        val action = StandingsFragmentDirections.actionStandingsFragmentToScorersFragment()
+        findNavController().navigate(action)
     }
 }
