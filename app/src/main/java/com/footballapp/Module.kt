@@ -58,7 +58,7 @@ val apiModule = module {
     single { provideRestApi(get(), get()) }
 }
 
-val retrofitModule = module {
+val networkModule = module {
     fun provideGson(): Gson {
         return GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.IDENTITY).create()
     }

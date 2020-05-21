@@ -20,7 +20,7 @@ class MyApplication : Application() {
                 listOf(
                     repositoryModule,
                     apiModule,
-                    retrofitModule,
+                    networkModule,
                     viewModelModule,
                     firebaseAuthModule,
                     connectionModule
