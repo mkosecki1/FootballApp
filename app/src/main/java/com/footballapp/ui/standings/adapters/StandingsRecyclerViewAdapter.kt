@@ -17,12 +17,6 @@ class StandingsRecyclerViewAdapter(
 ) :
     RecyclerView.Adapter<StandingsViewHolder>() {
 
-    fun updateTable(newTable: List<Table>) {
-        table.clear()
-        table.addAll(newTable)
-        notifyDataSetChanged()
-    }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = StandingsViewHolder(
         LayoutInflater.from(parent.context).inflate(R.layout.standings_item_layout, parent, false)
     )
@@ -31,6 +25,12 @@ class StandingsRecyclerViewAdapter(
 
     override fun onBindViewHolder(holder: StandingsViewHolder, position: Int) {
         holder.bind(table[position], activity)
+    }
+
+    fun updateTable(newTable: List<Table>) {
+        table.clear()
+        table.addAll(newTable)
+        notifyDataSetChanged()
     }
 }
 
