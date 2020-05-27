@@ -6,8 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.navigation.fragment.findNavController
+import com.firebase.ui.auth.AuthUI
 import com.footballapp.R
+import com.footballapp.ext.runDestination
 import com.footballapp.ext.setVisible
 import com.footballapp.ext.showSnackBar
 import com.footballapp.ext.stringConnector
@@ -15,6 +16,9 @@ import com.footballapp.model.ScorersModel
 import com.footballapp.net.ResponseCall
 import com.footballapp.ui.scorers.epoxy.EpoxyScorersController
 import kotlinx.android.synthetic.main.scorers_fragment.*
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ScorersFragment : Fragment() {
@@ -59,7 +63,11 @@ class ScorersFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         goToStandingsButtonScorersFragment.setOnClickListener {
-            runStandings()
+            runDestination(this, R.id.standingsFragment)
+        }
+
+        logoutButtonScorersFragment.setOnClickListener {
+            logoutUser()
         }
     }
 
@@ -98,8 +106,11 @@ class ScorersFragment : Fragment() {
         constraintLayoutScorersFragment.showSnackBar(exception)
     }
 
-    private fun runStandings() {
-        val action = ScorersFragmentDirections.actionScorersFragmentToStandingsFragment()
-        findNavController().navigate(action)
+    private fun logoutUser() {
+        AuthUI.getInstance().signOut(requireContext())
+        GlobalScope.launch {
+            delay(100)
+            runDestination(this@ScorersFragment, R.id.loginFragment)
+        }
     }
 }
