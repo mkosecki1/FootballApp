@@ -17,7 +17,6 @@
     <dimen name="text_size_18_sp">18sp</dimen>
 
     <!-- LOGIN SCREEN -->
-    <dimen name="login_fragment_button_height">40dp</dimen>
     <dimen name="box_stroke_width">2dp</dimen>
     <dimen name="text_size_app_name_login_fragment">30sp</dimen>
     <dimen name="text_size_title_login_fragment">22sp</dimen>
@@ -30,6 +29,11 @@
     <dimen name="recycler_margin_big">16dp</dimen>
     <dimen name="scorers_card_layout_height">70dp</dimen>
 
+    <!-- STANDINGS SCREEN -->
+    <dimen name="standings_card_layout_height">50dp</dimen>
+    <dimen name="standings_bar_layout_height">35dp</dimen>
+    <dimen name="team_logo_size">30dp</dimen>
+
     <!-- OTHERS -->
     <dimen name="radius_micro">5dp</dimen>
     <dimen name="radius_small">7dp</dimen>
@@ -37,9 +41,5 @@
     <dimen name="bundesliga_logo_width">70dp</dimen>
     <dimen name="bundesliga_logo_height">50dp</dimen>
     <dimen name="nav_bar_height">45dp</dimen>
-
-    <!-- SCORERS STANDINGS -->
-    <dimen name="standings_card_layout_height">50dp</dimen>
-    <dimen name="standings_bar_layout_height">35dp</dimen>
-    <dimen name="team_logo_size">30dp</dimen>
+    <dimen name="button_height">40dp</dimen>
 </resources>
