@@ -24,6 +24,9 @@
     <dimen name="line_spacing_medium_login_fragment">6sp</dimen>
     <dimen name="text_input_cursor_width">2dp</dimen>
 
+    <!-- LOGIN SCREEN -->
+    <dimen name="back_arrow_size">30dp</dimen>
+
     <!-- SCORERS SCREEN -->
     <dimen name="recycler_margin_medium">12dp</dimen>
     <dimen name="recycler_margin_big">16dp</dimen>

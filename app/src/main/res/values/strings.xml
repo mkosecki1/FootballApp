@@ -7,11 +7,14 @@
     <string name="login_fragment_error_invalid_format_text">Invalid login format</string>
     <string name="login_fragment_error_empty_password_text">Enter password</string>
     <string name="login_fragment_error_invalid_login_or_password_text">Invalid login or password</string>
-    <string name="login_fragment_register_button_text">You do not have account? Register </string>
+    <string name="login_fragment_register_button_text">Register</string>
 
     <!-- REGISTER -->
     <string name="register_fragment_button_text">Register</string>
     <string name="register_fragment_title_text">Register to the application</string>
+    <string name="register_fragment_error_invalid_login_format_text">Login must be a mail</string>
+    <string name="register_fragment_error_invalid_password_format_text">Password must be at least 8 characters long and must contain at least one digit, one letter and one nonalphanumeric character</string>
+    <string name="register_fragment_error_user_creation_unable">Unable to create user. Try again.</string>
 
     <!-- LOGIN & REGISTER-->
     <string name="user_name_hint_text">Username</string>
