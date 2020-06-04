@@ -24,3 +24,9 @@ fun TextView.addDot(s1: String) {
 
 fun String.emailValidation(): String? =
     if (Patterns.EMAIL_ADDRESS.matcher(this).matches()) this else null
+
+fun String.passwordValidation(): String? {
+    val regexPassword = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+={}|':;?/.,<>])(?=\\S+$).{8,10}$".toRegex()
+    return if (regexPassword.matches(this)) this else null
+}
+

@@ -46,7 +46,7 @@
         <item name="android:textAllCaps">true</item>
     </style>
 
-    <style name="LoginTitleStyle" parent="@android:style/TextAppearance">
+    <style name="TitleStyle" parent="@android:style/TextAppearance">
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">@dimen/text_size_title_login_fragment</item>
         <item name="android:fontFamily">sans-serif-light</item>
@@ -54,7 +54,7 @@
         <item name="android:lineSpacingExtra">@dimen/line_spacing_medium_login_fragment</item>
     </style>
 
-    <style name="LoginButtonStyle" parent="Widget.AppCompat.Button">
+    <style name="ButtonStyle" parent="Widget.AppCompat.Button">
         <item name="android:background">@drawable/login_button_shape</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:textAppearance">@style/LoginButtonTextAppearanceStyle</item>

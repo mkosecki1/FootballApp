@@ -4,6 +4,7 @@ import com.footballapp.net.ConnectionManager
 import com.footballapp.net.RestApi
 import com.footballapp.repository.Repository
 import com.footballapp.ui.login.LoginViewModel
+import com.footballapp.ui.register.RegisterViewModel
 import com.footballapp.ui.scorers.ScorersViewModel
 import com.footballapp.ui.standings.StandingsViewModel
 import com.google.firebase.auth.FirebaseAuth
@@ -23,6 +24,7 @@ const val HEADER_VALUE = "97a5f465440a4bd4bbe735a791adbc78"
 
 val viewModelModule = module {
     viewModel { LoginViewModel(repository = get()) }
+    viewModel { RegisterViewModel(repository = get()) }
     viewModel { ScorersViewModel(repository = get()) }
     viewModel { StandingsViewModel(repository = get()) }
 }

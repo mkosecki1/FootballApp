@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_loginFragment_to_scorersFragment"
             app:destination="@id/scorersFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment" />
     </fragment>
 
     <fragment
@@ -33,6 +36,15 @@
         android:label="fragment_login">
         <action
             android:id="@+id/action_standingsFragment_to_scorersFragment"
+            app:destination="@id/scorersFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.footballapp.ui.register.RegisterFragment"
+        android:label="fragment_register">
+        <action
+            android:id="@+id/action_registrationFragment_to_scorersFragment"
             app:destination="@id/scorersFragment" />
     </fragment>
 

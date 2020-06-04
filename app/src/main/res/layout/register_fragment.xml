@@ -2,67 +2,66 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/constraintLayoutLoginFragment"
+    android:id="@+id/constraintLayoutRegisterFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/colorPrimary"
     android:focusableInTouchMode="true"
-    tools:context=".ui.login.LoginFragment">
+    tools:context=".ui.register.RegisterFragment">
+
+    <ImageView
+        android:id="@+id/backArrowRegisterFragment"
+        android:layout_width="@dimen/back_arrow_size"
+        android:layout_height="@dimen/back_arrow_size"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="@dimen/margin_small_10_dp"
+        android:src="@drawable/ic_arrow_back"/>
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineTopLoginFragment"
+        android:id="@+id/guidelineTopRegisterFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.3" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineStartLoginFragment"
+        android:id="@+id/guidelineStartRegisterFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_begin="@dimen/margin_large_32dp" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineEndLoginFragment"
+        android:id="@+id/guidelineEndRegisterFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_end="@dimen/margin_large_32dp" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/textTitleLoginFragment"
+        android:id="@+id/textTitleRegisterFragment"
         style="@style/TitleStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/login_fragment_title_text"
-        app:layout_constraintBottom_toTopOf="@+id/textAppNameLoginFragment"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineEndLoginFragment"
-        app:layout_constraintStart_toStartOf="@+id/guidelineStartLoginFragment" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/textAppNameLoginFragment"
-        style="@style/LoginAppNameStyle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:text="@string/register_fragment_title_text"
         android:layout_marginBottom="@dimen/margin_medium_20dp"
-        android:text="@string/app_name"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineTopLoginFragment"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineEndLoginFragment"
-        app:layout_constraintStart_toStartOf="@+id/guidelineStartLoginFragment" />
+        app:layout_constraintBottom_toTopOf="@+id/guidelineTopRegisterFragment"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEndRegisterFragment"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStartRegisterFragment" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputUserNameLoginFragment"
+        android:id="@+id/textInputUserNameRegisterFragment"
         style="@style/TextInputLayoutStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:errorEnabled="true"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineEndLoginFragment"
-        app:layout_constraintStart_toStartOf="@+id/guidelineStartLoginFragment"
-        app:layout_constraintTop_toTopOf="@id/guidelineTopLoginFragment">
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEndRegisterFragment"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStartRegisterFragment"
+        app:layout_constraintTop_toTopOf="@id/guidelineTopRegisterFragment">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textEditUserNameLoginFragment"
+            android:id="@+id/textEditUserNameRegisterFragment"
             style="@style/TextInputEditTextStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -73,19 +72,19 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputPasswordLoginFragment"
+        android:id="@+id/textInputPasswordRegisterFragment"
         style="@style/TextInputLayoutStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:endIconMode="password_toggle"
         app:endIconTint="@color/white"
         app:errorEnabled="true"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineEndLoginFragment"
-        app:layout_constraintStart_toStartOf="@+id/guidelineStartLoginFragment"
-        app:layout_constraintTop_toBottomOf="@id/textInputUserNameLoginFragment">
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEndRegisterFragment"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStartRegisterFragment"
+        app:layout_constraintTop_toBottomOf="@id/textInputUserNameRegisterFragment">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textEditPasswordLoginFragment"
+            android:id="@+id/textEditPasswordRegisterFragment"
             style="@style/TextInputEditTextStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -96,30 +95,18 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/buttonLoginFragment"
+        android:id="@+id/buttonRegisterFragment"
         style="@style/ButtonStyle"
         android:layout_width="0dp"
         android:layout_height="@dimen/button_height"
         android:layout_marginTop="@dimen/margin_large_32dp"
-        android:text="@string/login_fragment_button_text"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineEndLoginFragment"
-        app:layout_constraintStart_toStartOf="@+id/guidelineStartLoginFragment"
-        app:layout_constraintTop_toBottomOf="@id/textInputPasswordLoginFragment" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/buttonRegisterLoginFragment"
-        style="@style/ButtonStyle"
-        android:layout_width="0dp"
-        android:layout_height="@dimen/button_height"
-        android:layout_marginTop="@dimen/margin_large_32dp"
-        android:text="@string/login_fragment_register_button_text"
-        android:background="@drawable/register_button_shape"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineEndLoginFragment"
-        app:layout_constraintStart_toStartOf="@+id/guidelineStartLoginFragment"
-        app:layout_constraintTop_toBottomOf="@id/buttonLoginFragment" />
+        android:text="@string/register_fragment_button_text"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEndRegisterFragment"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStartRegisterFragment"
+        app:layout_constraintTop_toBottomOf="@id/textInputPasswordRegisterFragment" />
 
     <androidx.core.widget.ContentLoadingProgressBar
-        android:id="@+id/progressBarLoginFragment"
+        android:id="@+id/progressBarRegisterFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:theme="?android:attr/progressBarStyle"

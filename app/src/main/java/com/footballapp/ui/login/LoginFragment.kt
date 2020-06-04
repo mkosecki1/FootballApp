@@ -49,6 +49,10 @@ class LoginFragment : Fragment() {
             checkInternetConnection()
             view.hideKeyboard()
         }
+
+        buttonRegisterLoginFragment.setOnClickListener {
+            runDestination(this, R.id.registrationFragment)
+        }
     }
 
     private fun observeLoginDataChange() {
