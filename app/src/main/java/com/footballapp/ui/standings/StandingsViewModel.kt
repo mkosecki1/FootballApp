@@ -15,9 +15,9 @@ class StandingsViewModel(private val repository: Repository) : ViewModel() {
     val standingsStatus: LiveData<ResponseCall<StandingsModel>>
         get() = _standingsStatus
 
-    fun loadStandings() {
+    fun loadStandings(leagueId: String) {
         viewModelScope.launch {
-            val result = repository.getAllStandings()
+            val result = repository.getAllStandings(leagueId)
             _standingsStatus.value = result
         }
     }

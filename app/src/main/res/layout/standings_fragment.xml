@@ -8,28 +8,20 @@
     android:background="@color/colorPrimary"
     tools:context=".ui.standings.StandingsFragment">
 
-    <ImageView
-        android:id="@+id/logoStandingsFragment"
-        android:layout_width="@dimen/bundesliga_logo_height"
-        android:layout_height="@dimen/bundesliga_logo_width"
-        android:layout_marginStart="@dimen/margin_small_10_dp"
-        android:layout_marginTop="@dimen/margin_small_10_dp"
-        android:src="@drawable/bundesliga_logo"
-        android:visibility="gone"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/competitionStandingsFragment"
-        style="@style/CompetitionTextStyle"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/competitionSpinnerStandingsFragment"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/spinner_height"
+        android:layout_marginStart="@dimen/margin_medium_12_dp"
         android:layout_marginTop="@dimen/margin_big_28_dp"
+        android:layout_marginEnd="@dimen/margin_medium_12_dp"
+        android:background="@drawable/spinner_outline"
         android:gravity="center"
+        android:popupBackground="@drawable/spinner_outline_background"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="League" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/seasonStandingsFragment"
@@ -38,9 +30,10 @@
         android:layout_height="0dp"
         android:layout_marginTop="@dimen/margin_medium_12_dp"
         android:gravity="center"
+        android:textSize="@dimen/text_size_16_sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/competitionStandingsFragment"
+        app:layout_constraintTop_toBottomOf="@+id/competitionSpinnerStandingsFragment"
         tools:text="Season" />
 
     <include

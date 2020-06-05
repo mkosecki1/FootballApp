@@ -4,14 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.firebase.ui.auth.AuthUI
 import com.footballapp.R
-import com.footballapp.ext.runDestination
-import com.footballapp.ext.setVisible
-import com.footballapp.ext.showSnackBar
-import com.footballapp.ext.stringConnector
+import com.footballapp.ext.*
+import com.footballapp.ext.LeagueId.*
 import com.footballapp.model.ScorersModel
 import com.footballapp.net.ResponseCall
 import com.footballapp.ui.scorers.epoxy.EpoxyScorersController
@@ -21,10 +20,11 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class ScorersFragment : Fragment() {
+class ScorersFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
     private val scorersViewModel by viewModel<ScorersViewModel>()
     private lateinit var epoxyScorersController: EpoxyScorersController
+    private var selectLeague: ((Int) -> Unit)? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -32,14 +32,12 @@ class ScorersFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val inflate = inflater.inflate(R.layout.scorers_fragment, container, false)
-        scorersViewModel.loadScorers()
 
         scorersViewModel.scorersStatus.observe(
             viewLifecycleOwner, Observer {
                 when (it) {
                     is ResponseCall.Success -> {
                         onSuccess(
-                            it.data.competition.name,
                             it.data.season?.startDate,
                             it.data.season?.endDate,
                             it.data
@@ -62,6 +60,9 @@ class ScorersFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        setupSpinner(requireContext(), competitionSpinnerScorersFragment, this)
+        choseLeague()
+
         goToStandingsButtonScorersFragment.setOnClickListener {
             runDestination(this, R.id.standingsFragment)
         }
@@ -71,31 +72,46 @@ class ScorersFragment : Fragment() {
         }
     }
 
+    override fun onNothingSelected(parent: AdapterView<*>?) {
+        scorersViewModel.loadScorers(BUNDESLIGA.value)
+    }
+
+    override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+        selectLeague?.invoke(position)
+        progressBarScorersFragment.show()
+    }
+
     private fun runEpoxyController(scorersModel: ScorersModel) {
         epoxyScorersController = EpoxyScorersController(scorersModel)
         epoxyScorersController.setData(true)
         recyclerViewScorersFragment.setController(epoxyScorersController)
     }
 
+    private fun choseLeague() {
+        selectLeague = {
+            when (it) {
+                0 -> scorersViewModel.loadScorers(BUNDESLIGA.value)
+                1 -> scorersViewModel.loadScorers(PREMIER_LEAGUE.value)
+                2 -> scorersViewModel.loadScorers(PREMIERA_DIVISION.value)
+                3 -> scorersViewModel.loadScorers(SERIE_A.value)
+                4 -> scorersViewModel.loadScorers(LIGUE_1.value)
+            }
+        }
+    }
+
     private fun onSuccess(
-        name: String?,
         startDate: String?,
         endDate: String?,
         scorersModel: ScorersModel
     ) {
-        competitionScorersFragment.stringConnector(
-            name,
-            getString(R.string.scorers_title_text),
-            null
-        )
         seasonScorersFragment.stringConnector(
-            getString(R.string.season_title_text),
+            getString(R.string.scorers_title_text),
             startDate,
             endDate
         )
         runEpoxyController(scorersModel)
+        competitionSpinnerScorersFragment.setVisible()
         progressBarScorersFragment.hide()
-        logoScorersFragment.setVisible()
     }
 
     private fun onError(error: String) {

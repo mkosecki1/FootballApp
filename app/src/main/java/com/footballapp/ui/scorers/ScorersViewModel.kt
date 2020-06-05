@@ -15,9 +15,9 @@ class ScorersViewModel(private val repository: Repository) : ViewModel() {
     val scorersStatus: LiveData<ResponseCall<ScorersModel>>
         get() = _scorersStatus
 
-    fun loadScorers() {
+    fun loadScorers(leagueId: String) {
         viewModelScope.launch {
-            val result = repository.getAllScorers()
+            val result = repository.getAllScorers(leagueId)
             _scorersStatus.value = result
         }
     }
