@@ -1,8 +1,11 @@
 <resources>
+
     <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="android:spinnerItemStyle">@style/SpinnerItem</item>
+        <item name="android:spinnerDropDownItemStyle">@style/SpinnerItem.DropDownItem</item>
     </style>
 
       <style name="AppTheme.Launcher" parent="Theme.AppCompat.DayNight">
@@ -96,6 +99,20 @@
         <item name="android:textStyle">bold</item>
         <item name="android:layout_marginStart">2dp</item>
         <item name="android:layout_marginEnd">2dp</item>
+    </style>
+
+    <!-- SPINNER -->
+    <style name="SpinnerItem" parent="@android:style/Widget.TextView.SpinnerItem">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/text_size_18_sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="SpinnerItem.DropDownItem" parent="@android:style/Widget.DropDownItem">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/text_size_18_sp</item>
+        <item name="android:paddingStart">@dimen/margin_small_10_dp</item>
     </style>
 
 </resources>

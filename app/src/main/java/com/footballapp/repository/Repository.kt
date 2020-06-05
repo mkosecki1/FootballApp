@@ -12,11 +12,11 @@ class Repository(
     private val connectionManager: ConnectionManager
 ) : BaseRepository() {
 
-    suspend fun getAllScorers(): ResponseCall<ScorersModel> =
-        call { restApi.getScorers() }
+    suspend fun getAllScorers(leagueId: String): ResponseCall<ScorersModel> =
+        call { restApi.getScorers(leagueId) }
 
-    suspend fun getAllStandings() : ResponseCall<StandingsModel> =
-        call { restApi.getStandings() }
+    suspend fun getAllStandings(leagueId: String) : ResponseCall<StandingsModel> =
+        call { restApi.getStandings(leagueId) }
 
     fun hasNetworkConnection(connectivityManager: ConnectivityManager) =
         connectionManager.hasNetworkConnection(connectivityManager)
