@@ -38,3 +38,6 @@ Screen where user can check top scorers in actual season. Clicking on league nam
 Screen where user can check actual season table. Clicking on league name will expand the list with other leagues.
 
 <img src="https://i.ibb.co/Sd0C0J1/standings.png" height=500 width=281>   <img src="https://i.ibb.co/xJn2y7W/standings-spinner.png" height=500 width=281>
+
+# Developed By
+- Maciej Kosecki
