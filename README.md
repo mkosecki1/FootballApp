@@ -32,9 +32,9 @@ Screen where user can register, using his email as login and choosing his passwo
 # Scorers screen
 Screen where user can check top scorers in actual season. Clicking on league name will expand the list with other leagues. 
 
-<img src="https://i.ibb.co/hg9rpGz/scorers.png" height=500 width=281> <img src="https://i.ibb.co/qksHnnH/scorers-spinner.png" height=500 width=281>
+<img src="https://i.ibb.co/hg9rpGz/scorers.png" height=500 width=281>   <img src="https://i.ibb.co/qksHnnH/scorers-spinner.png" height=500 width=281>
 
 # Table screen
-Screen where user can check actual season table.
+Screen where user can check actual season table. Clicking on league name will expand the list with other leagues.
 
-<img src="https://i.ibb.co/TLrk77G/screen-3.png" height=500 width=250>
+<img src="https://i.ibb.co/Sd0C0J1/standings.png" height=500 width=281>   <img src="https://i.ibb.co/xJn2y7W/standings-spinner.png" height=500 width=281>
