@@ -5,19 +5,19 @@ The application show statistics of top five european football leagues: Premier L
 <b>API source:</b> https://www.football-data.org/documentation/api
 
 # Technology:
-<b>Dependency Injection:</b> Koin
+<b>Dependency Injection:</b> <i>Koin</i>
   
-<b>Architecture pattern:</b> MVVM
+<b>Architecture pattern:</b> <i>MVVM</i>
 
-<b>User authentication:</b> Firebase Authentication
+<b>User authentication:</b> <i>Firebase Authentication</i>
 
-<b>Libraries:</b>
+<b>Libraries:</b><i>
 - Retrofit 2
 - OkHttp
 - Navigation component
 - Epoxy
 - Glide
-- GlideToVectorYou
+- GlideToVectorYou</i>
 
 # Login screen:
 Screen where user can log in to application. Application check validation of email and password.
