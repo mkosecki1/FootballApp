@@ -40,7 +40,7 @@ Screen where user can check actual season table. Clicking on league name will ex
 <img src="https://i.ibb.co/Sd0C0J1/standings.png" height=500 width=281>   <img src="https://i.ibb.co/xJn2y7W/standings-spinner.png" height=500 width=281>
 
 # Application graph
-<img src="https://i.ibb.co/XFgFJjp/Footbal-App-Diagram.png">
+<img src="https://i.ibb.co/x5VQtYy/Footbal-App-Diagram.png">
 
 # Developed By
 - Maciej Kosecki
