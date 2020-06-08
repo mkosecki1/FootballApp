@@ -6,6 +6,7 @@ The application show statistics of top five european football leagues: Premier L
 - API: https://www.football-data.org/documentation/api
 
 #Technology:
+
 Dependency Injection:
 - Koin
 
