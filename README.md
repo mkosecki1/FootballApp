@@ -1,9 +1,27 @@
 # FootballApp
 
-An application showing Bundesliga statistics. Currently my work focused on three screens are: login, top scorers, league table.
+The application show statistics of top five european football leagues: Premier League (England), La Liga (Spain), Bundesliga (Germany), Serie A (Italy). App focus on top scorers and table statistics.
 
 #API source:
 - API: https://www.football-data.org/documentation/api
+
+#Technology:
+Dependency Injection:
+- Koin
+
+Architecture pattern:
+- MVVM
+
+User authentication:
+- Firebase Authentication
+
+Libraries:
+- Retrofit 2
+- OkHttp
+- Navigation component
+- Epoxy
+- Glide
+- GlideToVectorYou
 
 # Login screen:
 Screen where user can log in to application. Application check validation of email and password.
