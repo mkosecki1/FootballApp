@@ -20,14 +20,19 @@ The application show statistics of top five european football leagues: Premier L
 - GlideToVectorYou</i>
 
 # Login screen:
-Screen where user can log in to application. Application check validation of email and password.
+Screen where user can log in to application or go to registration screen. Application check validation of login and password.
 
 <img src="https://i.ibb.co/mRGP0qJ/login.png" height=500 width=281>
 
-# Scorers screen
-Screen where user can check top scorers in actual season.
+# Registration screen:
+Screen where user can register, using his email as login and choosing his password.
 
-<img src="https://i.ibb.co/WD70Djg/screen-2.png" height=500 width=250>
+<img src="https://i.ibb.co/vLss09m/register.png" height=500 width=281>
+
+# Scorers screen
+Screen where user can check top scorers in actual season. Clicking on league name will expand the list with other leagues. 
+
+<img src="https://i.ibb.co/hg9rpGz/scorers.png" height=500 width=281> <img src="https://i.ibb.co/qksHnnH/scorers-spinner.png" height=500 width=281>
 
 # Table screen
 Screen where user can check actual season table.
