@@ -2,11 +2,10 @@
 
 The application show statistics of top five european football leagues: Premier League (England), La Liga (Spain), Bundesliga (Germany), Serie A (Italy). App focus on top scorers and table statistics.
 
-#API source:
+# API source:
 - API: https://www.football-data.org/documentation/api
 
-#Technology:
-
+# Technology:
 Dependency Injection:
 - Koin
 
