@@ -8,7 +8,7 @@ An application showing Bundesliga statistics. Currently my work focused on three
 # Login screen:
 Screen where user can log in to application. Application check validation of email and password.
 
-<img src="https://i.ibb.co/mRGP0qJ/login.png" height=500 width=250>
+<img src="https://i.ibb.co/mRGP0qJ/login.png" height=500 width=300>
 
 # Scorers screen
 Screen where user can check top scorers in actual season.
