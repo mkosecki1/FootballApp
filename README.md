@@ -1,4 +1,4 @@
-# FootballApp
+# FootballApp <img src="https://i.ibb.co/GsP1vY7/ic-launcher.png" width=50>
 
 The application show statistics of top five european football leagues: Premier League (England), La Liga (Spain), Bundesliga (Germany), Serie A (Italy). App focus on top scorers and table statistics.
 
