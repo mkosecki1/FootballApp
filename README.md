@@ -13,7 +13,7 @@ Screen where user can log in to application. Application check validation of ema
 # Scorers screen
 Screen where user can check top scorers in actual season.
 
-<img src="https://i.ibb.co/WD70Djg/screen-2.png" height=500 width=250>
+<img src="https://i.ibb.co/WD70Djg/screen-2.png" height=500 width=300>
 
 # Table screen
 Screen where user can check actual season table.
